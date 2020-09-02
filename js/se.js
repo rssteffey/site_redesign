@@ -3,6 +3,8 @@ var THREE;
 var camera, scene, renderer;
 var geometry, material, mesh;
 
+var points_y_max, points_x_max, points_z_max, points_y_min, points_x_min, points_z_min;
+
 // Constants
 var props = {
     stars: {
@@ -43,7 +45,7 @@ function onWindowResize() {
 
 function init() {
 
-    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 1000);
+    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 15);
     camera.position.z = 1;
 
     scene = new THREE.Scene();
@@ -101,14 +103,16 @@ function init() {
 
     var bounding_box = new THREE.Box3();
     bounding_box.setFromObject( pointsA );
-    pointsB.position.y -= (bounding_box.max.y - bounding_box.min.y)
-    loop_height = bounding_box.max.y;
+    points_y_max = bounding_box.max.y;
+    points_y_min = bounding_box.min.y;
+    pointsB.position.y -= (points_y_max - points_y_min);
+    loop_height = points_y_max;
 
     // Need to modify custom ShaderMaterial before fog will work with it
     // scene.background = 0x000000;
     // scene.fog = new THREE.Fog(0x00ff00, 0.5, 100000);
 
-    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer = new THREE.WebGLRenderer( { antialias: false } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
     //document.body.appendChild( renderer.domElement );
@@ -127,21 +131,12 @@ function animate() {
     pointsB.rotation.y = 1 * time;
     pointsB.position.y += 0.0000000001 * time;
 
-    var bounding_box = new THREE.Box3();
-    bounding_box.setFromObject( pointsA );
-
     if(pointsA.position.y > loop_height * 2){
-        pointsA.position.y -= (bounding_box.max.y - bounding_box.min.y) * 2
+        pointsA.position.y -= (points_y_max - points_y_min) * 2
     }
     if(pointsB.position.y > loop_height * 2){
-        pointsB.position.y -= (bounding_box.max.y - bounding_box.min.y) * 2
+        pointsB.position.y -= (points_y_max - points_y_min) * 2
     }
-
-    // cyclical color mode
-    //var h = ( (360 * time) % 360 );
-    // Purple cycle test
-    //var l = Math.round(((24 * time) % 24) + 76);
-    //pointsA.material.uniforms.color.value = new THREE.Color("hsl(" + 276 + ", 100%, " + 100 + "% )");
     
     render();
 }
