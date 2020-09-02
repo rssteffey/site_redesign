@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Shawn Steffey</title>
+
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="icon" type="image/x-icon" href="/Images/favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Josefin+Sans|Raleway|Roboto:300" rel="stylesheet">
+
+</head>
+<body>
+	<div class="body_wrapper" id="se-el">
+		<div id="header">
+			<h1>Shawn Steffey</h1>
+			<!-- <span>Programmer in Franklin, TN. </span> -->
+			
+			<div id="header_links">
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#blog">Blog</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	
+<!-- Shaders for starfield -->
+
+<script type="x-shader/x-vertex" id="vertexshader">
+
+	attribute float scale;
+	attribute vec4 color;
+
+	out vec4 color_point;
+
+	void main() {
+
+		vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+		gl_PointSize = scale * ( 300.0 / - mvPosition.z );
+
+		gl_Position = projectionMatrix * mvPosition;
+
+		color_point = color;
+
+	}
+
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentshader">
+	in vec4 color_point;
+
+	void main() {
+
+		if ( length( gl_PointCoord - vec2( 0.5, 0.5 ) ) > 0.475 ) discard;
+
+		gl_FragColor = vec4( color_point);
+
+	}
+
+</script>
+
+	<script src="js/se.js"></script>
+</body>
+</html>
