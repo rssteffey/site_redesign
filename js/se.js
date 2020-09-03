@@ -8,12 +8,12 @@ var points_y_max, points_x_max, points_z_max, points_y_min, points_x_min, points
 // Constants
 var props = {
     stars: {
-        columns: 5,
-        rows: 5
+        columns: 10,
+        rows: 10
     },
     color_cycles:{
         borealis: [0xFFFFFF, 0xF8EADC, 0xEFF1BB, 0xBFEA9C, 0x7EE385, 0x62DDAA, 0x47C7D6, 0x2E6ACF, 0x2F16C8, 0x8000C2, 0x2F16C8,0x2E6ACF, 0x47C7D6, 0x62DDAA, 0x7EE385, 0xBFEA9C, 0xEFF1BB, 0xF8EADC],
-        purple: [0xFFFFFF, 0xF0E2F8, 0xE2C6F1, 0xD4AAEA, 0xC68DE3, 0xB871DD, 0xAA55D6, 0x9C38CF, 0x8E1CC8, 0x8000C2],
+        purple: [0xFFFFFF, 0xFFFFFF , 0xFFFFFF, 0xF0E2F8, 0xE2C6F1, 0xD4AAEA, 0xC68DE3, 0xB871DD, 0xAA55D6, 0x9C38CF, 0x8E1CC8, 0x8000C2, 0x8000C2, 0x8000C2],
     }
 }
 
@@ -45,7 +45,7 @@ function onWindowResize() {
 
 function init() {
 
-    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 15);
+    camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 30);
     camera.position.z = 1;
 
     scene = new THREE.Scene();
