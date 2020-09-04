@@ -52,20 +52,32 @@ body{
 	height: 100vh;
 	position: absolute;
 	width: 100%;
+	background-color: #000000;
+	color: white;
 }
 
 .body_wrapper{
-	perspective: 5px;
 	height: 100vh;
   	overflow-x: hidden;
   	overflow-y: scroll;
   	position: relative;
 }
 
+h2{
+	font-size: 2em;
+	text-align: center;
+}
+
 canvas{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
+}
+
+.header_section{
+	width: 100%;
+	height: 100%;
+	position: relative;
 }
 
 #header{
@@ -76,6 +88,13 @@ canvas{
 	position: absolute;
 	top: 30%;
 	left: 3em;
+}
+
+.header_bground{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -5;
 }
 
 #header h1{
@@ -115,13 +134,63 @@ canvas{
 	text-decoration: none;
 }
 
-#header_links li:hover{
-	/* background-color: #44274F; */
-}
-
 #header_links li:hover a{
 	color: #FFFFFF;
 }
+
+.return_to_earth{
+	height: 300px;
+	/* Fallback to transparent and stars instead of black */
+	/* (Although if your browser can't do a gradient, 3D canvas seems unlikely) */
+	background: rgb(0,0,0,0);
+	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+/* About Section */
+.about_section{
+	height: 400px;
+	width: 100%;
+	background: rgb(0,0,0);
+}
+
+
+
+/* Projects Section */
+.projects_section{
+	width: 100%;
+	background-color: #000000;
+}
+
+.projects_block{
+	height: 300px;
+	/* border-bottom: 5px inset rgba(255, 255, 255, 0.3); */
+	border-bottom: 5px inset rgba(0, 0, 0, 0.1);
+	border-top: 5px inset rgba(0, 0, 0, 0.1);
+	flex-direction: row;
+	display: flex;
+	justify-content: center;
+}
+
+.projects_block > div {
+	flex-basis: 40%;
+}
+
+.project_image.light{
+	mix-blend-mode: screen;
+}
+
+.project_image.dark{
+	mix-blend-mode: multiply;
+	opacity: 50%;
+}
+
+.project_image > img{
+	width: 300px;
+	height: 200px;
+}
+
+
+
 
 /* Footer */
 
@@ -131,6 +200,30 @@ canvas{
 	position: relative;
 	z-index: 8000;
 }
+
+
+/* --------- Seasonal Colors ------------  */
+/* Summer */
+.summer_color_1{
+	background-color: #540D6E;
+}
+
+.summer_color_2{
+	background-color: #EE4266;
+}
+
+.summer_color_3{
+	background-color: #FFD23F;
+}
+
+.summer_color_4{
+	background-color: #3BCEAC;
+}
+
+.summer_color_5{
+	background-color: #0EAD69;
+}
+
 
 /* Responsive, because people use these fancy cellular things now */
 

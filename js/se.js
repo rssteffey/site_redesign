@@ -116,7 +116,7 @@ function init() {
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
     //document.body.appendChild( renderer.domElement );
-    document.getElementById('se-el').appendChild(renderer.domElement);
+    document.getElementById('grand_and_miraculous').appendChild(renderer.domElement);
     window.addEventListener( 'resize', onWindowResize, false );
 
 }
