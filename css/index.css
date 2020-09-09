@@ -63,9 +63,18 @@ body{
   	position: relative;
 }
 
+p {
+	font-family: 'Inconsolata', monospace;
+}
+
+h1{
+	font-family: 'Gruppo', cursive;
+}
+
 h2{
 	font-size: 2em;
 	text-align: center;
+	font-family: 'Gruppo', cursive;
 }
 
 canvas{
@@ -99,7 +108,7 @@ canvas{
 
 #header h1{
 	font-size: 4em;
-	font-family: 'Bitter', sans-serif;
+	font-family: 'Gruppo', cursive;
 	margin-bottom: 0.1em;
 	padding-left: 15px;
 }
@@ -122,7 +131,7 @@ canvas{
 }
 
 #header_links li{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Gruppo', sans-serif;
 	flex-grow: 1;
 	padding-top: 15px;
 	padding-bottom: 10px;
@@ -146,10 +155,14 @@ canvas{
 	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
 }
 
+.centerized{
+	padding-left: 12em;
+	padding-right: 12em;
+}
+
 /* About Section */
 .about_section{
 	height: 400px;
-	width: 100%;
 	background: rgb(0,0,0);
 }
 
@@ -159,6 +172,35 @@ canvas{
 .projects_section{
 	width: 100%;
 	background-color: #000000;
+}
+
+.project_desc_wrapper{
+	position: relative;
+	height: 100%;
+	display: flex;
+}
+
+.project_desc{
+	margin: auto;
+}
+
+.project_desc>h3{
+	font-family: 'Bangers', cursive;
+	font-size: 2.5em;
+	line-height: 1.5em;
+}
+
+.project_desc>p{
+	font-family: 'Inconsolata', monospace;
+}
+
+a.learn_more{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 1.1em;
+	font-family: 'Gruppo', monospace;
+	line-height: 2em;
+	white-space: nowrap;
 }
 
 .projects_block{
@@ -175,6 +217,11 @@ canvas{
 	flex-basis: 40%;
 }
 
+.project_image{
+	position: relative;
+}
+
+
 .project_image.light{
 	mix-blend-mode: screen;
 }
@@ -187,6 +234,10 @@ canvas{
 .project_image > img{
 	width: 300px;
 	height: 200px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
 }
 
 
