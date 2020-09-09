@@ -117,7 +117,7 @@
 	attribute float scale;
 	attribute vec4 color;
 
-	out vec4 color_point;
+	varying vec4 color_point;
 
 	void main() {
 
@@ -134,7 +134,7 @@
 </script>
 
 <script type="x-shader/x-fragment" id="fragmentshader">
-	in vec4 color_point;
+	varying vec4 color_point;
 
 	void main() {
 
