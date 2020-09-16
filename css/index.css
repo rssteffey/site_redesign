@@ -75,6 +75,8 @@ h2{
 	font-size: 2em;
 	text-align: center;
 	font-family: 'Gruppo', cursive;
+	padding-top: 1em;
+	padding-bottom: 1em;
 }
 
 canvas{
@@ -164,6 +166,22 @@ canvas{
 .about_section{
 	height: 400px;
 	background: rgb(0,0,0);
+	padding-bottom: 5em;
+}
+
+.about_section .shawn_pic{
+	background-size: cover;
+	width: 4em;
+	background-image: url("../img/shawn.png");
+}
+
+.about_content{
+	display: flex;
+	flex-direction: row;
+}
+
+.about_text{
+	padding-top: 2em;
 }
 
 
@@ -184,29 +202,60 @@ canvas{
 	margin: auto;
 }
 
-.project_desc>h3{
+.project_desc > h3{
 	font-family: 'Bangers', cursive;
 	font-size: 2.5em;
 	line-height: 1.5em;
+	text-shadow: 3px 3px #00000055;
 }
 
 .project_desc>p{
 	font-family: 'Inconsolata', monospace;
 }
 
+.dark p{
+	color: #000000;
+}
+
+.light p{
+	color: #ffffff;
+}
+
 a.learn_more{
-	color: #FFFFFF;
+	color: red;
 	text-decoration: none;
 	font-size: 1.1em;
 	font-family: 'Gruppo', monospace;
 	line-height: 2em;
 	white-space: nowrap;
+	font-weight: 500;
+}
+
+.light a.learn_more{
+	color: #FFFFFFAA;
+}
+
+.dark a.learn_more{
+	color: #000000AA;
+}
+
+a.learn_more:hover{
+	font-weight: 900;
+	font-size: 1.1em;
+}
+
+.light a.learn_more:hover{
+	color: #000000AA;
+}
+
+.dark a.learn_more:hover{
+	color: #FFFFFFAA;
 }
 
 .projects_block{
 	height: 300px;
 	/* border-bottom: 5px inset rgba(255, 255, 255, 0.3); */
-	border-bottom: 5px inset rgba(0, 0, 0, 0.1);
+	/* border-bottom: 5px inset rgba(0, 0, 0, 0.1); */
 	border-top: 5px inset rgba(0, 0, 0, 0.1);
 	flex-direction: row;
 	display: flex;
@@ -240,7 +289,17 @@ a.learn_more{
 	bottom: 0;
 }
 
+.panel_edge{
+	background-color: #FFFFFF;
+	height: 0.75em;
+	width:100%;
+}
 
+
+.contact_section{
+	background-color: #000000;
+	height: 400px;
+}
 
 
 /* Footer */
